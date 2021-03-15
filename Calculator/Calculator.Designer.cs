@@ -57,11 +57,12 @@ namespace Calculator
             // 
             this.txtResultado.BackColor = System.Drawing.SystemColors.MenuText;
             this.txtResultado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtResultado.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtResultado.Location = new System.Drawing.Point(12, 50);
+            this.txtResultado.Location = new System.Drawing.Point(12, 43);
+            this.txtResultado.MaximumSize = new System.Drawing.Size(283, 55);
             this.txtResultado.Name = "txtResultado";
-            this.txtResultado.Size = new System.Drawing.Size(283, 46);
+            this.txtResultado.Size = new System.Drawing.Size(283, 55);
             this.txtResultado.TabIndex = 0;
             this.txtResultado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -296,6 +297,8 @@ namespace Calculator
             // 
             // Calculator
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(307, 473);
             this.Controls.Add(this.btnPorcentagem);
@@ -320,6 +323,8 @@ namespace Calculator
             this.Controls.Add(this.lblOperacao);
             this.Controls.Add(this.txtResultado);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(323, 512);
             this.Name = "Calculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculadora";

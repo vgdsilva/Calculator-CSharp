@@ -19,11 +19,12 @@ namespace Calculator
         public Calculator()
         {
             InitializeComponent();
+
         }
 
         private void btnZero_Click(object sender, EventArgs e)
         {
-            txtResultado.Text += "0"; // Adicionar a string e Concatenar ela
+            txtResultado.Text += "0"; // Adicionar a string e Concatenar ela        
         }
 
         private void btnUm_Click(object sender, EventArgs e)
