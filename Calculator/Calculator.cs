@@ -13,7 +13,7 @@ namespace Calculator
 {
     public partial class Calculator : Form
     {
-        decimal valor1 = 0, valor2 = 0, resultado = 0;
+        decimal valor1 = 0, valor2 = 0;
         string operacao = "";
 
         public Calculator()
@@ -73,41 +73,63 @@ namespace Calculator
 
         private void btnMais_Click(object sender, EventArgs e)
         {
-            valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
-            txtResultado.Text = "";
-            operacao = "SOMA";
-            lblOperation.Text = "+";
+            if (txtResultado.Text != "")
+            {
+                // Cultereinfo é para verificar numeros com ,
+                valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
+                txtResultado.Text = "";
+                operacao = "SOMA";
+                lblOperation.Text = "+";
+            }
         }
 
         private void btnMenos_Click(object sender, EventArgs e)
         {
-            valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
-            txtResultado.Text = "";
-            operacao = "SUBTRACAO";
-            lblOperation.Text = "-";
+            if (txtResultado.Text != "")
+            {
+                valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
+                txtResultado.Text = "";
+                operacao = "SUBTRACAO";
+                lblOperation.Text = "-";
+            }
         }
 
         private void btnVezes_Click(object sender, EventArgs e)
         {
-            valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
-            txtResultado.Text = "";
-            operacao = "MULTIPLICACAO";
-            lblOperation.Text = "X";
+            if (txtResultado.Text != "") 
+            { 
+                valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
+                txtResultado.Text = "";
+                operacao = "MULTIPLICACAO";
+                lblOperation.Text = "X";
+            }
         }
 
         private void btnDividir_Click(object sender, EventArgs e)
         {
-            valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
-            txtResultado.Text = "";
-            operacao = "DIVISAO";
-            lblOperation.Text = "/";
+            if (txtResultado.Text != "")
+            {
+                valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
+                txtResultado.Text = "";
+                operacao = "DIVISAO";
+                lblOperation.Text = "/";
+            }
+            
         }
 
         private void btnPorcentagem_Click(object sender, EventArgs e)
         {
-            valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
-            operacao = "PORCENTAGEM";
-            lblOperation.Text = "%";
+            if (txtResultado.Text != "")
+            {
+                valor1 = decimal.Parse(txtResultado.Text, CultureInfo.InvariantCulture);
+                operacao = "PORCENTAGEM";
+                lblOperation.Text = "%";
+            }
+            
+        }
+        private void btnPonto_Click(object sender, EventArgs e)
+        {
+            txtResultado.Text += ".";
         }
 
         private void btnApagar_Click(object sender, EventArgs e)
@@ -153,9 +175,6 @@ namespace Calculator
             }
         }
 
-        private void btnPonto_Click(object sender, EventArgs e)
-        {
-            txtResultado.Text += ".";
-        }
+        
     }
 }
